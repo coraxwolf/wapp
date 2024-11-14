@@ -27,14 +27,15 @@ cd wapp
 
 2. Environment Variables (in .env file in root)
 ```
-OW_TOKEN=yourapikey
-LOG_LEVEL=info                # (use: info/error/warn/debug/none)
-LOG_FILENAME=logfile.log      # (Name of Log File)
-LOG_PATH=path/to/logs         # (relative to Data Path)
-LOG_CONSOLE-true              # (log to console or not (false))
-LOG_FMT_JSON=false            # (log format in json (true) or text (false))
-DATA_PATH=path/to/data/files
 ADDR=8888 # Address for Site
+STATIC_PATH=path/to/static/files # (relative to Data Path)
+OW_TOKEN=yourapikey              # (OpenWeatherMap API Key)
+LOG_LEVEL=info                   # (use: info/error/warn/debug/none)
+LOG_FILENAME=logfile.log         # (Name of Log File)
+LOG_PATH=path/to/logs            # (relative to Data Path)
+LOG_CONSOLE=true                 # (log to console or not (false))
+LOG_FMT_JSON=false               # (log format in json (true) or text (false))
+DATA_PATH=path/to/data/files
 ```
 
 ### File Structure
