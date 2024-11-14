@@ -43,3 +43,8 @@ coverage/
 # Workspace Files
 go.work
 go.work.sum
+
+# Vender Dependencies
+node_modules/
+vendor/
+
