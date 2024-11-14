@@ -16,7 +16,7 @@ Weather App is a simple web-based application that allows users to check the cur
 ## Getting Started
 ### Prerequisites
 * Go 1.23.3
-* API Key from OpenWeatherMap.org(https://home.openweathermap.org)
+* API Key from [OpenWeatherMap.org](https://home.openweathermap.org)
 
 ### Install Repo
 1. Clone Repositiory
@@ -57,4 +57,4 @@ ADDR=8888 # Address for Site
 This project is developed using Test Driven Development practices
 
 ## License
-This project is licensed under the MIT(LICENSE.md) License
+This project is licensed under the [MIT License](LICENSE.md)
