@@ -29,6 +29,8 @@ cd wapp
 ```
 ADDR=8888 # Address for Site
 STATIC_PATH=path/to/static/files # (relative to Data Path)
+HTTP_LOG=true                    # (log http requests true or false)
+HTTP_LOG_NAME=httpfile.log       # (log file for http requests)
 OW_TOKEN=yourapikey              # (OpenWeatherMap API Key)
 LOG_LEVEL=info                   # (use: info/error/warn/debug/none)
 LOG_FILENAME=logfile.log         # (Name of Log File)
@@ -48,20 +50,23 @@ DATA_PATH=path/to/data/files
 * **make cover**: Generate Test Coverages by Functions
 
 ### File Structure
-* cmd: Commands
-* cmd/app: Main App
-* cmd/httpd: Web (httpd) Server -- using net/http library
-* handlers: Route Handlers
-* middleware: Middleware
-* models: Data/Repository Models
-* viewmodels: View Models for the web views
-* views: TEMPL templates
-* internal: Internal Dependencies
-* internal/config: App Configuration/Setup
-* src: CSS & JavaScript source files
-* data: Local data store. Files not synced to repo, but used by running process
-* data/assets: Static Folder for web assets (css, js, images, fonts)
-* logs: Log Files
+* **cmd**: Commands
+* **cmd/app**: Main App
+* **cmd/httpd**: Web (httpd) Server -- using net/http library
+* **handlers**: Route Handlers
+* **middleware**: Middleware
+* **models**: Data/Repository Models
+* **viewmodels**: View Models for the web views
+* **views**: TEMPL templates
+* **internal**: Internal Dependencies
+* **internal/config**: App Configuration/Setup
+* **internal/database**: Database Service
+* **internal/owapi**: OpenWeatherMaps API Service
+* **internal/logger**: Logger Service
+* **src**: CSS & JavaScript source files
+* **data**: Local data store. Files not synced to repo, but used by running process
+* **data/assets**: Static Folder for web assets (css, js, images, fonts)
+* **logs**: Log Files
 
 ## Development
 ### TDD
