@@ -38,6 +38,15 @@ LOG_FMT_JSON=false               # (log format in json (true) or text (false))
 DATA_PATH=path/to/data/files
 ```
 
+### Build Commands
+* **make clean**: Clean up Build Files
+* **make css**: NPM Script to generate tailwindcss css files
+* **make templates**: Generate TEMPL template files
+* **make build-dev**: Build Dev Binary
+* **make run**: Build and Run Dev Binary
+* **make test**: Run Tests
+* **make cover**: Generate Test Coverages by Functions
+
 ### File Structure
 * cmd: Commands
 * cmd/app: Main App
@@ -48,6 +57,7 @@ DATA_PATH=path/to/data/files
 * viewmodels: View Models for the web views
 * views: TEMPL templates
 * internal: Internal Dependencies
+* internal/config: App Configuration/Setup
 * src: CSS & JavaScript source files
 * data: Local data store. Files not synced to repo, but used by running process
 * data/assets: Static Folder for web assets (css, js, images, fonts)
