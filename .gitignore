@@ -1,0 +1,45 @@
+# Git Ignore File
+
+# Editor Files
+.vscode/
+.idea/
+
+# Configuration Files
+.env
+.env*
+.env.*
+.ini
+
+# Data Files
+data/
+*.zip
+*.tar
+*.tar.*
+*.pdf
+*.csv
+*.json
+*.db
+
+# Build and Production Files
+dist/
+tmp/
+build/
+
+# Buld Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Testing Binaries
+*.test
+test/
+
+# Coverage Output
+coverage/
+*.out
+
+# Workspace Files
+go.work
+go.work.sum
