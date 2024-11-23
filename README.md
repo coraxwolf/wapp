@@ -31,13 +31,18 @@ ADDR=8888 # Address for Site
 STATIC_PATH=path/to/static/files # (relative to Data Path)
 HTTP_LOG=true                    # (log http requests true or false)
 HTTP_LOG_NAME=httpfile.log       # (log file for http requests)
+HTTP_SECRET=secret               # (String for session encryption)
 OW_TOKEN=yourapikey              # (OpenWeatherMap API Key)
 LOG_LEVEL=info                   # (use: info/error/warn/debug/none)
 LOG_FILENAME=logfile.log         # (Name of Log File)
 LOG_PATH=path/to/logs            # (relative to Data Path)
 LOG_CONSOLE=true                 # (log to console or not (false))
 LOG_FMT_JSON=false               # (log format in json (true) or text (false))
-DATA_PATH=path/to/data/files
+DATA_PATH=path/to/data/files     # (root path for data files)
+DB_HOST=localhost                # (Database Host)
+DB_PORT=9999                     # (Database Server Port)
+DB_USER=user                     # (Database Username)
+DB_PASS=secret                   # (Database User Password)
 ```
 
 ### Build Commands

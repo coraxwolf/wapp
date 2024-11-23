@@ -15,7 +15,7 @@ DEV_NAME = "wap-dev-$(BUILD_VERSION)"
 DEV_DIR = "tmp"
 
 # Temple Program
-TEMPL = $(shell which templ
+TEMPL = $(shell which templ)
 
 # Clean
 clean:
@@ -38,20 +38,19 @@ templates:
 build-dev: clean css templates
 	@echo "Building Development Build ($(BUILD_VERSION))"
 	export ENV=development
-	@go build $(GOFLAGS) -o $(DEV_DIR)/$(DEV_NAME)
+	@ENV=development go build $(GOFLAGS) -o $(DEV_DIR)/$(DEV_NAME)
 
 # Testing
 
 # Test
 test: clean css templates
 	@echo "Running Tests"
-	export ENV=testing
-	@go test ./...
+	@ENV=testing go test -v ./...
 
 # Coverage
 cover: test
 	@echo "Coverage Report"
-	go test -coverprofile=coverage.out $(GOFLAGS) ./...
+	ENV=testing go test -coverprofile=coverage.out $(GOFLAGS) ./...
 	@go tool cover -func=coverage.out
 
 # Run Development
@@ -62,6 +61,5 @@ run: build-dev
 # Prod Build
 build: clean css templates
 	@echo "Production Build..."
-	export ENV=Production
-	@go build $(GOFLAGS) -o $(BINARY_DIR)/$(BINARY_NAME)
+	@ENV=production go build $(GOFLAGS) -o $(BINARY_DIR)/$(BINARY_NAME)
 	@echo "Build Complete."
