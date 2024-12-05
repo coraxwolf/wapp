@@ -19,7 +19,7 @@ type Config struct {
 }
 
 type DBConfig struct {
-	dsn string
+	Dsn string
 }
 
 type LogConfig struct {
@@ -33,10 +33,10 @@ type LogConfig struct {
 type HTTPConfig struct {
 	ADDR    string
 	Mux     *http.ServeMux
-	timeout time.Duration
-	secret  string
-	log     bool
-	logFile string
+	Timeout time.Duration
+	Secret  string
+	Log     bool
+	LogFile string
 }
 
 // Errors
@@ -92,14 +92,14 @@ func New() (*Config, error) {
 	// Setup Configs
 	ht := &HTTPConfig{
 		ADDR:    addr,
-		timeout: time.Duration(httptm) * time.Second,
-		secret:  secret,
-		log:     httplog,
-		logFile: dataPath + httplname,
+		Timeout: time.Duration(httptm) * time.Second,
+		Secret:  secret,
+		Log:     httplog,
+		LogFile: dataPath + httplname,
 	}
 
 	db := &DBConfig{
-		dsn: dbUser + ":" + dbPass + "@tcp(" + dbHost + ":" + dbPort + ")/" + dbName,
+		Dsn: dbUser + ":" + dbPass + "@tcp(" + dbHost + ":" + dbPort + ")/" + dbName,
 	}
 
 	lc := &LogConfig{
