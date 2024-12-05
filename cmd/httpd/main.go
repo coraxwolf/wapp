@@ -3,6 +3,7 @@ package web
 import (
 	"context"
 	"errors"
+	"fmt"
 	"log/slog"
 	"net/http"
 	"os"
@@ -46,6 +47,11 @@ func NewServer(cfg config.HTTPConfig) (*WebServer, error) {
 		Handler:           m,
 		ReadHeaderTimeout: cfg.Timeout,
 	}
+
+	// Set Static File Route
+	fmt.Printf("Static Path: %s\n", cfg.StaticPath)
+	m.Handle("GET /assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir(cfg.StaticPath))))
+
 	ws := &WebServer{
 		Addr:    cfg.ADDR,
 		Secret:  cfg.Secret,
@@ -55,6 +61,7 @@ func NewServer(cfg config.HTTPConfig) (*WebServer, error) {
 		Srv:     s,
 		Timeout: cfg.Timeout,
 	}
+
 	return ws, nil
 }
 

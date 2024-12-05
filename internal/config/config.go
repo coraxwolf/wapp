@@ -31,12 +31,13 @@ type LogConfig struct {
 }
 
 type HTTPConfig struct {
-	ADDR    string
-	Mux     *http.ServeMux
-	Timeout time.Duration
-	Secret  string
-	Log     bool
-	LogFile string
+	ADDR       string
+	Mux        *http.ServeMux
+	Timeout    time.Duration
+	Secret     string
+	Log        bool
+	LogFile    string
+	StaticPath string
 }
 
 // Errors
@@ -91,11 +92,12 @@ func New() (*Config, error) {
 
 	// Setup Configs
 	ht := &HTTPConfig{
-		ADDR:    addr,
-		Timeout: time.Duration(httptm) * time.Second,
-		Secret:  secret,
-		Log:     httplog,
-		LogFile: dataPath + httplname,
+		ADDR:       addr,
+		Timeout:    time.Duration(httptm) * time.Second,
+		Secret:     secret,
+		Log:        httplog,
+		LogFile:    dataPath + httplname,
+		StaticPath: spath,
 	}
 
 	db := &DBConfig{
