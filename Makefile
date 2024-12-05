@@ -37,7 +37,6 @@ templates:
 # Build Development
 build-dev: clean css templates
 	@echo "Building Development Build ($(BUILD_VERSION))"
-	export ENV=development
 	@ENV=development go build $(GOFLAGS) -o $(DEV_DIR)/$(DEV_NAME)
 
 # Testing
